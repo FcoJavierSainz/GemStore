@@ -2,7 +2,7 @@ applications:
 - path: .
   memory: 256M
   instances: 1
-  domain: engagesupport.bluemix.net
+  domain: mydomain.bluemix.net
   name: GemStore
   host: gemstore
   disk_quota: 1024M
