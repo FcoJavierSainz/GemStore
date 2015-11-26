@@ -32,8 +32,8 @@ if (process && process.env && process.env.VCAP_SERVICES) {
     }
 } else {
     console.log("Local Enviroment");
-    me = "45ce3904-f697-4f33-b788-097cec80af21-bluemix";
-    password = "f4f096ec4dee1a635dd395f07bddb7336ddba0ad575ca025551ac1d498395737";
+    me = "user";
+    password = "pass";
 }
 // Load the Cloudant library.
 var Cloudant = require('cloudant');
