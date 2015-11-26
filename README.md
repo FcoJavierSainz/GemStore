@@ -23,4 +23,4 @@
 [Install Node.js]: https://nodejs.org/en/download/
 [Install Cloud Foundry CLI]: https://github.com/codeschool/ShapingUpWithAngular.js
 [App]: https://github.com/codeschool/ShapingUpWithAngular.js
-[shapping up with angular.js course]: https://www.codeschool.com/courses/shaping-up-with-angular-js
+[shapping up with angular.js]: https://www.codeschool.com/courses/shaping-up-with-angular-js
