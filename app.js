@@ -7,7 +7,6 @@
 // This application uses express as its web server
 // for more info, see: http://expressjs.com
 var express = require('express');
-var bodyParser = require('body-parser');
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
@@ -45,11 +44,11 @@ var store = cloudant.db.use("store");
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
+
+var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
 app.get('/api/store/items', function (req, res) {
     store.list({include_docs: true, descending: true}, function(err, body) {
         if (!err) {
@@ -67,6 +66,9 @@ app.post('/api/store/item/:id/addReview', function (req, res) {
         store.insert(obj);
     });
 });
+
+// get the app environment from Cloud Foundry
+var appEnv = cfenv.getAppEnv();
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function () {
     // print a message when the server starts listening

@@ -23,16 +23,13 @@
 
 
     app.controller("ReviewController", function ($scope, $http) {
-
         this.review = {};
-
         this.addReview = function (product) {
             this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             $http.post('api/store/item/' + product._id + '/addReview', this.review);
             this.review = {};
         };
-
     });
 
 })();
